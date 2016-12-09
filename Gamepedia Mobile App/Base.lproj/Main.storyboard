@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="5ic-UR-zdn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Gamepedia_Mobile_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +18,236 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gmY-6T-5fo">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <attributedString key="attributedText"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="gmY-6T-5fo" secondAttribute="trailing" id="6hg-ec-b2a"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="gmY-6T-5fo" secondAttribute="bottom" id="9xc-Py-K1J"/>
+                            <constraint firstItem="gmY-6T-5fo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Bei-jb-0X1"/>
+                            <constraint firstItem="gmY-6T-5fo" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="ZYw-ZC-zIY"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="textView" destination="gmY-6T-5fo" id="ZZA-8S-TfV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-364" y="89"/>
+        </scene>
+        <!--Wikis-->
+        <scene sceneID="7QS-Ed-lgt">
+            <objects>
+                <tableViewController id="qUS-85-A3Z" customClass="TableViewController" customModule="Gamepedia_Mobile_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="U5f-UB-vWz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" textLabel="Joy-Fu-mb1" detailTextLabel="GkS-mr-Pe6" style="IBUITableViewCellStyleSubtitle" id="43M-oe-NEb">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="43M-oe-NEb" id="Eck-iU-OZk">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Joy-Fu-mb1">
+                                            <frame key="frameInset" minX="15" minY="4" width="34" height="21"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GkS-mr-Pe6">
+                                            <frame key="frameInset" minX="15" minY="25" width="44" height="15"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="qUS-85-A3Z" id="oy9-4P-4im"/>
+                            <outlet property="delegate" destination="qUS-85-A3Z" id="azW-bg-Ubm"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Wikis" id="f1e-zh-1D6"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="e7C-eG-xNf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1740" y="59.820089955022496"/>
+        </scene>
+        <!--Wikis-->
+        <scene sceneID="aKU-pB-LI1">
+            <objects>
+                <collectionViewController extendedLayoutIncludesOpaqueBars="YES" id="hK1-Fd-4XM" customClass="CollectionViewController" customModule="Gamepedia_Mobile_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" dataMode="prototypes" id="RoJ-wX-Yx4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="iJb-kD-z74">
+                            <size key="itemSize" width="130" height="133"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="Av5-Gr-I3O" customClass="CollectionViewCell" customModule="Gamepedia_Mobile_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="130" height="133"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="130" height="133"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Cz-5s-V6G">
+                                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.91764705882352937" green="0.91764705882352937" blue="0.91764705882352937" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8Cz-5s-V6G" secondAttribute="bottom" id="Vdx-Zs-IGo"/>
+                                    <constraint firstItem="8Cz-5s-V6G" firstAttribute="leading" secondItem="Av5-Gr-I3O" secondAttribute="leading" id="iEy-Au-BFU"/>
+                                    <constraint firstAttribute="trailing" secondItem="8Cz-5s-V6G" secondAttribute="trailing" id="ulH-sv-rM4"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="titleLabel" destination="8Cz-5s-V6G" id="dbY-au-fuQ"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="hK1-Fd-4XM" id="iSb-Bu-aIK"/>
+                            <outlet property="delegate" destination="hK1-Fd-4XM" id="sgb-ho-Lei"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" title="Wikis" id="ARH-SX-sv5"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HQX-Jx-vdC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3618" y="770"/>
+        </scene>
+        <!--Wikis-->
+        <scene sceneID="R4u-Ub-j1t">
+            <objects>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="SA3-c1-Yxk" customClass="CollectionViewController" customModule="Gamepedia_Mobile_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LwT-bp-5eX"/>
+                        <viewControllerLayoutGuide type="bottom" id="xMF-vr-rZQ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="s8r-FW-tkg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="wjB-sb-Fvr">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="5" id="Jyh-27-KIP">
+                                    <size key="itemSize" width="130" height="133"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="bZ9-0P-ZPv" customClass="CollectionViewCell" customModule="Gamepedia_Mobile_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="130" height="133"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="130" height="133"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f4Q-Zn-SJG">
+                                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uHz-3p-MfU">
+                                                    <frame key="frameInset" width="130" height="98"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.91764705879999997" green="0.91764705879999997" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="f4Q-Zn-SJG" secondAttribute="trailing" id="7uc-u0-3OK"/>
+                                            <constraint firstItem="f4Q-Zn-SJG" firstAttribute="leading" secondItem="bZ9-0P-ZPv" secondAttribute="leading" id="raf-kg-644"/>
+                                            <constraint firstItem="f4Q-Zn-SJG" firstAttribute="height" secondItem="bZ9-0P-ZPv" secondAttribute="height" multiplier="0.2" id="sFT-UT-dNs"/>
+                                            <constraint firstAttribute="bottom" secondItem="f4Q-Zn-SJG" secondAttribute="bottom" id="vFb-Rf-Wsz"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="f4Q-Zn-SJG" id="4Ka-8Z-Rai"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="hK1-Fd-4XM" id="1kM-TP-v0O"/>
+                                    <outlet property="delegate" destination="hK1-Fd-4XM" id="IJy-Re-keo"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wjB-sb-Fvr" firstAttribute="leading" secondItem="s8r-FW-tkg" secondAttribute="leading" id="7hl-0o-7yV"/>
+                            <constraint firstAttribute="trailing" secondItem="wjB-sb-Fvr" secondAttribute="trailing" id="cF3-VN-VRA"/>
+                            <constraint firstAttribute="bottom" secondItem="wjB-sb-Fvr" secondAttribute="bottom" id="ol2-qx-ZAW"/>
+                            <constraint firstItem="wjB-sb-Fvr" firstAttribute="top" secondItem="s8r-FW-tkg" secondAttribute="top" id="sil-M7-u84"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Wikis" id="vq7-cd-Ppg"/>
+                    <connections>
+                        <outlet property="collectionView" destination="wjB-sb-Fvr" id="DmV-L4-I5d"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TqZ-YB-ueQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3408.8000000000002" y="70.614692653673174"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="DBR-2b-Te8">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="r6G-nV-Qcw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="23A-eT-Jp1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="qUS-85-A3Z" kind="relationship" relationship="rootViewController" id="NiV-CC-wjt"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fl3-Xh-ps1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800.79999999999995" y="59.820089955022496"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Eiz-9C-NSW">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="5ic-UR-zdn" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="lMr-yB-nYc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SA3-c1-Yxk" kind="relationship" relationship="rootViewController" id="9GB-WG-RG0"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SFQ-ae-cVX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2650.4000000000001" y="70.614692653673174"/>
         </scene>
     </scenes>
 </document>
