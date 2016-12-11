@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3077A72B52B5244130E7B486 /* Pods_Gamepedia_Mobile_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DE32047922ABA16D8D7EE6D /* Pods_Gamepedia_Mobile_App.framework */; };
 		69268A841DF74B2900C324DB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69268A831DF74B2900C324DB /* AppDelegate.swift */; };
 		69268A861DF74B2900C324DB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69268A851DF74B2900C324DB /* ViewController.swift */; };
 		69268A891DF74B2900C324DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69268A871DF74B2900C324DB /* Main.storyboard */; };
@@ -20,6 +21,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0DE32047922ABA16D8D7EE6D /* Pods_Gamepedia_Mobile_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Gamepedia_Mobile_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		69268A801DF74B2900C324DB /* Gamepedia Mobile App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Gamepedia Mobile App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		69268A831DF74B2900C324DB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		69268A851DF74B2900C324DB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -32,6 +34,8 @@
 		697134931DF9E74300EEF57F /* CollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		697134971DF9EACF00EEF57F /* CollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionViewCell.swift; sourceTree = "<group>"; };
 		697134991DFA025E00EEF57F /* SearchCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchCollectionViewCell.swift; sourceTree = "<group>"; };
+		ABE53A215D70AE0A4CD52205 /* Pods-Gamepedia Mobile App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gamepedia Mobile App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Gamepedia Mobile App/Pods-Gamepedia Mobile App.release.xcconfig"; sourceTree = "<group>"; };
+		AC07C0685012A38D906F5F61 /* Pods-Gamepedia Mobile App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Gamepedia Mobile App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Gamepedia Mobile App/Pods-Gamepedia Mobile App.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,17 +43,28 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3077A72B52B5244130E7B486 /* Pods_Gamepedia_Mobile_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		35A8BD39F664695FD85C673A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0DE32047922ABA16D8D7EE6D /* Pods_Gamepedia_Mobile_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		69268A771DF74B2800C324DB = {
 			isa = PBXGroup;
 			children = (
 				69268A821DF74B2900C324DB /* Gamepedia Mobile App */,
 				69268A811DF74B2900C324DB /* Products */,
+				AA725AACDFB20A6B951B768F /* Pods */,
+				35A8BD39F664695FD85C673A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,6 +94,15 @@
 			path = "Gamepedia Mobile App";
 			sourceTree = "<group>";
 		};
+		AA725AACDFB20A6B951B768F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AC07C0685012A38D906F5F61 /* Pods-Gamepedia Mobile App.debug.xcconfig */,
+				ABE53A215D70AE0A4CD52205 /* Pods-Gamepedia Mobile App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -86,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 69268A921DF74B2900C324DB /* Build configuration list for PBXNativeTarget "Gamepedia Mobile App" */;
 			buildPhases = (
+				79F946D39E113D9596CF51EB /* [CP] Check Pods Manifest.lock */,
 				69268A7C1DF74B2800C324DB /* Sources */,
 				69268A7D1DF74B2800C324DB /* Frameworks */,
 				69268A7E1DF74B2800C324DB /* Resources */,
+				5AAD3DB32A4902DB7160EBD7 /* [CP] Embed Pods Frameworks */,
+				F6F9DA03EBB432D8DFE09ACD /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -146,6 +173,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5AAD3DB32A4902DB7160EBD7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gamepedia Mobile App/Pods-Gamepedia Mobile App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		79F946D39E113D9596CF51EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run \'pod install\' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		F6F9DA03EBB432D8DFE09ACD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Gamepedia Mobile App/Pods-Gamepedia Mobile App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		69268A7C1DF74B2800C324DB /* Sources */ = {
@@ -277,6 +352,7 @@
 		};
 		69268A931DF74B2900C324DB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AC07C0685012A38D906F5F61 /* Pods-Gamepedia Mobile App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V92SZ8966T;
@@ -290,6 +366,7 @@
 		};
 		69268A941DF74B2900C324DB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABE53A215D70AE0A4CD52205 /* Pods-Gamepedia Mobile App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = V92SZ8966T;

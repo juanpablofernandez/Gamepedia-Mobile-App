@@ -34,7 +34,6 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
 
         self.resultsController.collectionView?.delegate = self
         self.resultsController.collectionView?.dataSource = self
-//        self.resultsController.collectionView?.register(CollectionViewCell(), forCellWithReuseIdentifier: "Cell")
         self.resultsController.collectionView?.backgroundColor = UIColor.white
         self.resultsController.collectionView?.register(SearchCollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
         
@@ -101,12 +100,17 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
         // Configure the cell
         if collectionView == self.collectionView {
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! CollectionViewCell
+            let image = articleList[indexPath.row]["Image"]
             cell.titleLabel.text = articleList[indexPath.row]["Title"]
+            cell.imageView.image = nil
+            cell.imageView.downloadedFrom(link: image!)
             return cell
         } else {
             print(filteredNames[indexPath.row]["Title"])
             let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! SearchCollectionViewCell
+            let image = filteredNames[indexPath.row]["Image"]
             cell.textLabel?.text = filteredNames[indexPath.row]["Title"]
+            cell.imageView?.downloadedFrom(link: image!)
 //            cell.backgroundColor = UIColor.blue
             return cell
         }
@@ -114,8 +118,29 @@ class CollectionViewController: UIViewController, UICollectionViewDelegateFlowLa
     }
     
     func listOfWikis(wikiList: [[String : String]]) {
-//        print(wikiList)
+        print(wikiList.count)
         articleList = wikiList
         collectionView?.reloadData()
+    }
+}
+
+extension UIImageView {
+    func downloadedFrom(url: URL, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        contentMode = mode
+        URLSession.shared.dataTask(with: url) { (data, response, error) in
+            guard
+                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
+                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
+                let data = data, error == nil,
+                let image = UIImage(data: data)
+                else { return }
+            DispatchQueue.main.async() { () -> Void in
+                self.image = image
+            }
+            }.resume()
+    }
+    func downloadedFrom(link: String, contentMode mode: UIViewContentMode = .scaleAspectFit) {
+        guard let url = URL(string: link) else { return }
+        downloadedFrom(url: url, contentMode: mode)
     }
 }

@@ -11,10 +11,12 @@ import UIKit
 class SearchCollectionViewCell: UICollectionViewCell {
     
     var textLabel: UILabel?
+    var imageView: UIImageView?
     
     override init(frame aFrame: CGRect) {
         super.init(frame: aFrame)
         setup()
+        setupImage()
         self.backgroundColor = UIColor(red: 234/256, green: 234/256, blue: 234/256, alpha: 1)
     }
     
@@ -32,5 +34,14 @@ class SearchCollectionViewCell: UICollectionViewCell {
         textLabel?.font = UIFont (name: "HelveticaNeue-Bold", size: 17)
         textLabel?.textColor = UIColor.white
         self.addSubview(textLabel!)
+    }
+    
+    func setupImage() {
+        let width = self.bounds.width
+        let height = self.bounds.height
+        let frame = CGRect(x: 0, y: 0, width: width, height: height * 0.8)
+        imageView = UIImageView(frame: frame)
+        imageView?.contentMode = UIViewContentMode.scaleAspectFill
+        self.addSubview(imageView!)
     }
 }

@@ -1,0 +1,6 @@
+framework module Pods_Gamepedia_Mobile_App {
+  umbrella header "Pods-Gamepedia Mobile App-umbrella.h"
+
+  export *
+  module * { export * }
+}

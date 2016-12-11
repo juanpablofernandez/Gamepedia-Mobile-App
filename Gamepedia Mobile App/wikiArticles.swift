@@ -8,6 +8,8 @@
 
 import Foundation
 import UIKit
+import Alamofire
+import SwiftyJSON
 
 protocol wikiArticlesDelegate {
     func listOfWikis(wikiList: [[String: String]])
@@ -19,7 +21,8 @@ class wikiArticles {
     var allWikis: [[String:String]] = []
     
     init() {
-        makeAllRequests(URL: "http://www.gamepedia.com/wikis")
+//        makeAllRequests(URL: "http://www.gamepedia.com/wikis")
+        update(url: "http://juanpablofernandez.pythonanywhere.com/json")
     }
     
     func getAllWikis(mainUrl: String) {
@@ -67,15 +70,6 @@ class wikiArticles {
                     
                 }
             }
-            
-            
-            
-//            for i in wikiInfo.indices {
-//                print()
-//                for a in wikiInfo[i].indices {
-//                    print(wikiInfo[i][a])
-//                }
-//            }
         }
     }
     
@@ -100,4 +94,22 @@ class wikiArticles {
             }
         }
     }
+    
+    func update(url: String) {
+        let apiToContact = url
+        Alamofire.request(apiToContact, method: .get).responseJSON { response in
+            switch response.result {
+            case .success:
+                if let value = response.result.value {
+                    let first = value as! [[String:String]]
+                    self.delegate?.listOfWikis(wikiList: first)
+                }
+                
+            case .failure(let error):
+                print(error)
+            }
+            
+        }
+    }
+
 }
